@@ -45,16 +45,16 @@ int main(){
             cout<<endl<<endl;
         }
         cout<<endl;
-        cout<<a<<"! = " ;
+        cout<<a<<"! =" ;
         int temp=0;
         for (auto it=numeros.begin();it!=numeros.end();it++){
             if (temp/15>=1 && temp%15==0){
                 cout<<endl<<"      ";
             }
-            if (it->first<10){
+            if (it->second<10){
                 cout<<"  "<<it->second;
             }else{
-                cout<<" "<<it->first;
+                cout<<" "<<it->second;
             }
             temp++;
         }
