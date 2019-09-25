@@ -44,8 +44,8 @@ int main(){
         }
         cout<<endl;
         cout<<a<<"! =" ;
-        int temp=0;
         for (auto it=numeros.begin();it!=numeros.end();it++){
+            int temp=0;
             if (temp/15>=1 && temp%15==0){
                 cout<<endl<<"     ";
             }
