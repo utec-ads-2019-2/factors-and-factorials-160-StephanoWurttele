@@ -5,28 +5,21 @@ using namespace std;
 
 
 void primeFactors(int n, map<int,int> &numeros){  
-    // Print the number of 2s that divide n  
     while (n % 2 == 0)  
     {  
-        cout << 2 << " ";  
         numeros[2]++;
         n = n/2;  
     }  
 
     for (int i = 3; i <= sqrt(n); i = i + 2)  
     {  
-        // While i divides n, print i and divide n  
         while (n % i == 0)  
         {  
             numeros[i]++;
-            cout << i << " ";  
             n = n/i;  
         }  
     }  
-    // This condition is to handle the case when n  
-    // is a prime number greater than 2  
     if (n > 2){
-        cout << n << " ";  
         numeros[n]++;
     }
 }  
@@ -37,17 +30,26 @@ void primeFactors(int n, map<int,int> &numeros){
 
 int main(){
 	int a;
-	map<int,int> numeros;
 	while(cin>>a){
+		if(a==0)
+			continue;
+	map<int,int> numeros;
 		for(int owo=1;owo<a+1;owo++){
             primeFactors(owo,numeros);
         }
-        cout<<endl;
-        cout<<a<<"! =" ;
+	if(a==100)
+		cout<<a<<"! =";
+	else if(a<10){
+        	cout<<"  "<<a<<"! =" ;
+	}
+	else{
+        	cout<<" "<<a<<"! =" ;
+	}
+        int temp=0;
         for (auto it=numeros.begin();it!=numeros.end();it++){
-            int temp=0;
             if (temp/15>=1 && temp%15==0){
-                cout<<endl<<"     ";
+                cout<<endl<<"      ";
+		temp=0;
             }
             if (it->second<10){
                 cout<<"  "<<it->second;
@@ -56,5 +58,6 @@ int main(){
             }
             temp++;
         }
+	cout<<endl;
     }
 }
