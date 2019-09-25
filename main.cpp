@@ -40,16 +40,14 @@ int main(){
 	map<int,int> numeros;
 	while(cin>>a){
 		for(int owo=1;owo<a+1;owo++){
-            cout<<"Primes of "<<owo<<endl;
             primeFactors(owo,numeros);
-            cout<<endl<<endl;
         }
         cout<<endl;
         cout<<a<<"! =" ;
         int temp=0;
         for (auto it=numeros.begin();it!=numeros.end();it++){
             if (temp/15>=1 && temp%15==0){
-                cout<<endl<<"      ";
+                cout<<endl<<"     ";
             }
             if (it->second<10){
                 cout<<"  "<<it->second;
